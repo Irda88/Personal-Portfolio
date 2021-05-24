@@ -1,0 +1,185 @@
+header {
+    background-color: transparent;
+    padding: 2em 2em;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    left: 20px;
+    width: 100%;
+    height: 20px;
+    background-color: transparent;
+    z-index: 3;
+
+    .containerNav {
+        display: grid;
+        place-content: space-between;
+        height: 20px;
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            top: -15px;
+            left: 1em;
+            padding: 0;
+            z-index: 1;
+            display: flex;
+            margin: 0;
+        }
+
+        .container {
+            height: 10px;
+            cursor: pointer;
+            width: 50px;
+            display: flex;
+            display: relative;
+            padding: 0;
+            position: absolute;
+            right: 4em;
+        }
+
+        nav {
+            font-size: 22px;
+            color: color(primary);
+            background: transparent;
+            opacity: 0;
+            transition: all 1ms;
+            position: relative;
+            right: 0;
+            margin: 35px auto;
+
+            .hide-mobile {
+                list-style-type: none;
+                display: block;
+                align-items: left;
+                padding-left: 0;
+
+                .listStyle {
+                    list-style-type: none;
+                    text-transform: lowercase;
+                }
+
+                .nameMenuDetail {
+                    text-decoration: none;
+                    color: color(primary);
+                    font-size: 20px;
+                    text-align: left;
+                    line-height: 1em;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+
+    nav.visible {
+        max-height: 100px;
+        opacity: 2;
+        background-color: transparent;
+        text-align: left;
+        position: absolute;
+        right: 2em;
+    }
+
+    .menu-btn {
+        width: 100%;
+        height: 5px;
+        background: color(primary-light);
+        position: relative;
+        transition: all 0.3s;
+        padding: 0;
+    }
+
+    .menu-btn::after {
+        content: "";
+        position: absolute;
+        background: color(secondary);
+        width: 100%;
+        height: 5px;
+        top: 10px;
+        transition: all 0.3s;
+    }
+
+    .menu-btn::before {
+        content: "";
+        position: absolute;
+        background: color(primary);
+        width: 100%;
+        height: 5px;
+        bottom: 10px;
+        transition: all 0.3s;
+    }
+
+    .container.active .menu-btn::after {
+        transform: rotateZ(45deg) translate(-7px, -7px);
+        background: color(ctaColor);
+    }
+
+    .container.active .menu-btn::before {
+        transform: rotateZ(-45deg) translate(-7px, 7px);
+        background: color(ctaColor);
+    }
+
+    .container.active .menu-btn {
+        background: transparent;
+    }
+
+    .search-icon {
+        color: color(primary);
+        cursor: pointer;
+        line-height: 3em;
+        width: 4em;
+        padding: 0;
+        position: absolute;
+        right: 7em;
+        top: 1.2em;
+    }
+
+    #show-search:checked ~ .search-icon i::before {
+        content: "\f00d";
+    }
+
+    .search-box {
+        position: absolute;
+        height: 100%;
+        max-width: calc(100% - 50px);
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+
+        input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 17px;
+            color: #fff;
+            background: #171c24;
+            padding: 0 100px 0 15px;
+        }
+
+        input::placeholder {
+            color: #f2f2f2;
+        }
+
+        .go-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 60px;
+            width: 70px;
+            background: #171c24;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+
+    #show-search:checked ~ .search-box {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

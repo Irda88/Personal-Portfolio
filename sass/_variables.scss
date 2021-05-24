@@ -1,0 +1,15 @@
+$colors: (
+    primary: #2a3640,
+    primary-light: lighten(#2a3640, 50%),
+    secondary: #c3f2c2,
+    secondary-light: lighten(#c3f2c2, 50%),
+    ctaColor: #f87e3a,
+    third: #8aabbf,
+);
+
+$padding: 15px;
+$borders: 15px;
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}

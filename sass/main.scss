@@ -1,0 +1,428 @@
+@import "variables";
+@import "header";
+@import "footer";
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Domine", serif;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: "Domine", serif;
+    margin: 0;
+    padding: 0;
+}
+
+.homePage {
+    margin: 6em 3em;
+    padding: 2em 1em;
+}
+
+.container2 {
+    position: relative;
+    display: flex;
+
+    .intro h1 {
+        text-align: center;
+        margin-top: 1em;
+        margin-left: 1em;
+        width: 14em;
+        line-height: 22px;
+        font-weight: normal;
+        font-size: 20px;
+        position: absolute;
+
+        .underlined {
+            position: relative;
+        }
+        .underlined:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            height: 15px;
+            width: 75px;
+            left: -15px;
+            top: 1.1em;
+            border: solid 2px color(ctaColor);
+            border-color: color(ctaColor) transparent transparent transparent;
+            border-radius: 50%;
+        }
+
+        p {
+            padding-top: 15px;
+        }
+    }
+
+    .bubblesArea {
+        padding: 10em 20em;
+
+        h1 {
+            color: color(ctaColor);
+            letter-spacing: .5em;
+            text-transform: uppercase;
+            z-index: 5;
+            width: 18em;
+            font-size: 40px;
+            position: absolute;
+            top: 6em;
+            left: 6em;
+        }
+
+        p {
+            color: white;
+            letter-spacing: .6em;
+            z-index: 4;
+            width: 38em;
+            font-size: 20px;
+            position: absolute;
+            top: 14.5em;
+            left: 12em;
+        }
+
+        ul {
+            list-style-type: none;
+            text-align: center;
+            position: absolute;
+
+            a {
+                text-decoration: none;
+                color: color(ctaColor);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            button {
+                background-color: color(ctaColor);
+                color: white;
+                border: none;
+                padding: 8px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                margin: 4px 2px;
+                border-radius: 12px;
+                position: relative;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            #bubbble1 {
+                margin: -5em 1em;
+                position: absolute;
+                width: 9em;
+                height: 9em;
+                border-radius: 50% 50%;
+                z-index: 1;
+                background: color(primary);
+
+                #skills {
+                    font-size: 2em;
+                    font-weight: bold;
+
+                    .button1 {
+                        font-size: 12px;
+                        top: -0.7em;
+                    }
+                }
+            }
+
+            #bubbble2 {
+                background: color(secondary);
+                margin: 3em -15em;
+                position: absolute;
+                width: 12em;
+                height: 12em;
+                border-radius: 50% 50%;
+                z-index: 1;
+
+                #employHistory {
+                    font-size: 1.8em;
+                    font-weight: bold;
+
+                    .button2 {
+                        font-size: 15px;
+                        top: -0.1em;
+
+                    }
+                }
+            }
+
+            #bubbble3 {
+                background: color(third);
+                position: absolute;
+                width: 40em;
+                height: 40em;
+                margin: -2em -10em;
+                border-radius: 50% 50%;
+
+                #studies {
+                    font-size: 3em;
+                    font-weight: bold;
+                    text-align: center;
+                    height: 1.5em;
+                    width: 4.5em;
+
+                    .button3 {
+                        font-size: 20px;
+                        top: -1em;
+                        left: -0.1em;
+                    }
+                }
+            }
+
+            #bubbble4 {
+                background: color(primary-light);
+                position: absolute;
+                width: 30em;
+                height: 30em;
+                margin: 19em -22em;
+                border-radius: 50% 50%;
+
+                &:hover {
+                    transform:translate(infinite, -3px, -3px);
+                }
+
+                #projects {
+                    font-size: 3em;
+                    font-weight: bold;
+
+                    .button4 {
+                        font-size: 25px;
+                        top: -0.2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#myPic {
+    height: 50px;
+    width: 50px;
+}
+
+@media (min-width: 650px) {
+    nav {
+        width: 20%;
+    }
+
+    .bubblesArea {
+        h1, p {
+            display: inline-block;
+            visibility: hidden;
+        }
+    }
+
+}
+
+@media (min-width: 768px) {
+    body {
+        background-color: red;
+    }
+    .container .menu-btn {
+        display: none;
+        cursor: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: unset;
+        position: fixed;
+
+        .containerNav {
+            display: grid;
+            grid-template-columns: 90px auto;
+            justify-content: unset;
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                background: none;
+                height: auto;
+                width: 100%;
+                position: unset;
+                padding: 0;
+                margin: 0 auto;
+                transition: 2ms;
+                opacity: 2;
+
+                .hide-mobile {
+                    display: flex;
+                    align-items: center;
+                    margin: 0;
+
+                    .listStyle {
+                        padding-bottom: 30px;
+                        padding-left: 30px;
+
+                        .nameMenuDetail {
+                            color: color(primary);
+                            font-size: 1em;
+                            font-weight: bold;
+                            text-align: justify;
+                            padding: auto;
+                        }
+                    }
+                }
+
+                #show-menu:checked ~ .menu-icon i::before {
+                    content: "\f00d";
+                }
+            }
+        }
+    }
+
+
+
+    .intro {
+        display: none;
+    }
+
+    .bubblesArea {
+        display: inline-block;
+
+        h1 {
+            display: inline-block;
+            visibility: visible;
+            margin-top: 3em;
+        }
+        p {
+            display: inline-block;
+            visibility: visible;
+            margin-top: 6em;
+        }
+
+        ul {
+
+            a {
+                opacity: 0;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            #bubbble1 {
+                left: 25em;
+                top: -2em;
+                transform: all 2s;
+            }
+
+            #bubbble2 {
+                left: -4em;
+                top: -1em;
+            }
+
+            #bubbble3 {
+                left: 18em;
+                top: 2em;
+
+                #studies {
+                    left: 6.8em;
+                }
+            }
+
+            #bubbble4 {
+                left: 6em;
+                top: -12em;
+            }
+        }
+
+    }
+}
+
+@media(min-width: 1250px) {
+    body {
+        background: purple;
+    }
+    .container .menu-btn {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+        position: fixed;
+
+        .containerNav {
+            display: grid;
+            grid-template-columns: 130px auto;
+            justify-content: unset;
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                background: none;
+                height: auto;
+                width: 100%;
+                position: unset;
+                padding: 0;
+                margin: 0 auto;
+                transition: 2ms;
+                opacity: 2;
+
+                .hide-mobile {
+                    display: flex;
+                    align-items: center;
+                    margin: 0;
+
+                    .nameMenuDetail {
+                        color: color(primary);
+                        font-size: 1em;
+                        font-weight: bold;
+                        float: right;
+                        text-align: justify;
+                    }
+                }
+
+                #show-menu:checked ~ .menu-icon i::before {
+                    content: "\f00d";
+                }
+            }
+        }
+    }
+
+    .intro {
+        display: none;
+    }
+
+    .bubblesArea {
+        display: flex;
+        margin-left: 12em;
+
+        h1 {
+            margin-left: 5.1em;
+        }
+
+        p {
+            margin-left: 10.1em;
+        }
+
+        #bubbble1 {
+            left: 55em;
+            top: -5em;
+            transform: all 2s;
+        }
+
+        #bubbble2 {
+            left: 10em;
+            top: -8em;
+        }
+
+        #bubbble3 {
+            left: 38em;
+            top: -5em;
+        }
+
+        #bubbble4 {
+            left: 23em;
+            top: -20em;
+        }
+    }
+}
+
