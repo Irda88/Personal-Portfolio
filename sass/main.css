@@ -586,9 +586,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  body {
-    background-color: red;
-  }
   .container .menu-btn {
     display: none;
     cursor: none;
@@ -697,9 +694,6 @@ body {
 }
 
 @media (min-width: 1250px) {
-  body {
-    background: purple;
-  }
   .container .menu-btn {
     display: none;
   }
